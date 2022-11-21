@@ -1,22 +1,38 @@
 'use strict';
 
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    /**
-     * Add altering commands here.
-     *
-     * Example:
-     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
-     */
+    await queryInterface.createTable('mapel', {
+      id: {
+        type : Sequelize.INTEGER,
+        primaryKey : true,
+        autoIncrement : true,
+        allowNull : false
+      },
+      name : {
+        type : Sequelize.STRING,
+        allowNull : true
+      },
+      id_guru : {
+        type : Sequelize.INTEGER,
+        allowNull : false
+      }
+    });
+
+    await queryInterface.addConstraint('mapel', {
+      type : 'foreign key',
+      name : 'ID_Guru',
+      fields : ['id_guru'],
+      references: {
+        table : 'guru',
+        field : 'id'
+      },
+      onUpdate : 'CASCADE',
+      onDelete : 'CASCADE'
+    });
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+    await queryInterface.dropTable('mapel');
   }
 };
