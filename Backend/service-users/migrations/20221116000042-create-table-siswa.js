@@ -39,6 +39,10 @@ module.exports = {
         type : Sequelize.STRING,
         allowNull : false
       },
+      pass : {
+        type : Sequelize.STRING,
+        allowNull : false
+      },
       noHP : {
         type : Sequelize.INTEGER,
         allowNull : true

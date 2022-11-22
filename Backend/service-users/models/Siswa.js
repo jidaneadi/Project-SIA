@@ -28,6 +28,28 @@ module.exports = (sequelize, DataTypes) => {
                 type : DataTypes.STRING,
                 allowNull : false
               },
+              jns_kelamin : {
+                type : DataTypes.ENUM,
+                values : ['laki-laki', 'perempuan'],
+                defaultValues : 'laki-laki',
+                allowNull : false
+              }, 
+              email : {
+                type : DataTypes.STRING,
+                allowNull : false
+              },
+              pass : {
+                type : DataTypes.STRING,
+                allowNull : false
+              },
+              noHP : {
+                type : DataTypes.INTEGER,
+                allowNull : true
+              },
+              alamat : {
+                type : DataTypes.STRING,
+                allowNull : true
+              },
               createdAt : {
                 field : "created_at",
                 type : DataTypes.DATE,
