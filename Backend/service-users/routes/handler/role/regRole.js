@@ -1,5 +1,4 @@
 const { Role } = require('../../../models');
-const bcrypt = require('bcrypt');
 const Validator = require('fastest-validator');
 const v = new Validator();
 
