@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
 
     const roleUser = await Role.findAll(sqlOptions);
 
-    return res.status(205).json({
+    return res.status(200).json({
         status : 'OK!',
         message : 'Berhasil Hapus Data',
         data : roleUser

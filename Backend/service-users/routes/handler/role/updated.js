@@ -31,11 +31,11 @@ module.exports = async(req, res) => {
 
     await roleUser.update({role});
 
-    return res.status(204).json({
+    return res.status(200).json({
         status : 'OK!',
         message : {
             id : roleUser.id, 
             role
-        },
+        }
     });
 }
