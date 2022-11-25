@@ -1,3 +1,4 @@
 const register = require('./regRole');
+const roleAll = require('./getRole');
 
-module.exports = { register };
+module.exports = { register, roleAll };
