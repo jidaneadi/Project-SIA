@@ -23,7 +23,7 @@ module.exports = async (req, res) => {
     const createdRole = await Role.create(data);
 
     return res.status(201).json({
-        status : 'Status OK!',
+        status : 'OK!',
         message : 'Sukses tambah data role',
         data : createdRole
     })
