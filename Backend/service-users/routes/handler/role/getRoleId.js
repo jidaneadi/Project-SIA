@@ -15,7 +15,7 @@ module.exports = async(req, res, next) => {
 
     return res.status(203).json({
         status : 'Ok!',
-        message : 'Get Role by id',
+        message : 'Mengambil data role dengan id',
         data : role
     })
 }
