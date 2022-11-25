@@ -1,3 +1,3 @@
-const regRole = require('./regRole');
+const register = require('./regRole');
 
-module.exports = { regRole };
+module.exports = { register };

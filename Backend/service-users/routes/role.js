@@ -3,6 +3,6 @@ const router = express.Router();
 
 const role = require('./handler/role');
 
-router.post('/register', role.regRole);
+router.post('/register', role.register);
 
 module.exports = router;

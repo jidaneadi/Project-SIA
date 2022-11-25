@@ -1,12 +1,11 @@
-const { Role } = require('../../../models');
+const { Angkatan } = require('../../../models');
 const Validator = require('fastest-validator');
 const v = new Validator();
 
-module.exports = async (req, res) => {
+module.exports = async (req, res) =>{
     const schema = {
-        role : 'string|empty:false'
+        tahun_masuk : 'string|empty:false'
     }
-
     const validate = v.validate(req.body, schema);
 
     if (validate.lenght){
@@ -17,14 +16,13 @@ module.exports = async (req, res) => {
     }
 
     const data = {
-        role : req.body.role
+        role : req.body.tahun_masuk
     }
 
-    const createdRole = await Role.create(data);
+    const createdRole = await Angkatan.create(data);
 
     return res.status(201).json({
         status : 'Status OK!',
-        message : 'Sukses tambah data role',
-        data : createdRole
+        message : 'Sukses tambah data role'
     })
 }
