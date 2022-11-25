@@ -10,9 +10,7 @@ module.exports = {
         allowNull : false
       },
       role : {
-        type : Sequelize.ENUM,
-        values : ['admin', 'guru', 'siswa'],
-        defaultValue : 'guru',
+        type : Sequelize.STRING,
         allowNull : false
       },
       created_at: {
