@@ -6,6 +6,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const siswaRouter = require('./routes/siswa');
+const guruRouter  = require('./routes/guru');
 const roleRouter  = require('./routes/role');
 const angkatanRouter  = require('./routes/angkatan');
 
@@ -19,7 +20,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/siswa', siswaRouter);
+app.use('/guru', guruRouter);
 app.use('/role', roleRouter);
 app.use('/angkatan', angkatanRouter);
+
 
 module.exports = app;
