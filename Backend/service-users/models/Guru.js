@@ -30,6 +30,10 @@ module.exports = (sequelize, DataTypes) => {
                 type : DataTypes.STRING,
                 allowNull : false
               },
+              pass : {
+                type : DataTypes.STRING,
+                allowNull : false
+              },
               noHP : {
                 type : DataTypes.INTEGER,
                 allowNull : true
