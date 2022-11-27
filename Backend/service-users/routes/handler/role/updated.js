@@ -29,13 +29,11 @@ module.exports = async(req, res) => {
 
     const { role } = req.body;
 
-    await roleUser.update({role});
+    const data = await roleUser.update({role});
 
     return res.status(200).json({
         status : 'OK!',
-        message : {
-            id : roleUser.id, 
-            role
-        }
+        message : 'Sukses update data role',
+        data : data
     });
 }
