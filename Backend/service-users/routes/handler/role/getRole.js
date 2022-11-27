@@ -13,6 +13,7 @@ module.exports = async (req, res, next) => {
         }
     }
 
+    //mengambil semua data yang cocok dengan data kolom di variabel sqlOptions
     const roleUser = await Role.findAll(sqlOptions);
 
     return res.status(202).json({

@@ -4,6 +4,7 @@ const router = express.Router();
 const siswa = require('./handler/siswa');
 
 router.get('/', siswa.allData);
+router.get('/:id', siswa.dataByID);
 router.post('/register', siswa.registerSiswa);
 
 module.exports = router;
