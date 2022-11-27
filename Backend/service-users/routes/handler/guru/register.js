@@ -47,7 +47,7 @@ module.exports = async (req, res) => {
         ttl : req.body.ttl,
         gender : req.body.gender,
         email : req.body.email,
-        noHp : req.body.noHP,
+        noHP : req.body.noHP,
         alamat : req.body.alamat
     }
 
