@@ -1,3 +1,4 @@
 const register = require('./regAngkatan')
+const getAngkatan = require('./getAngkatan');
 
-module.exports = {register};
+module.exports = {register, getAngkatan};
