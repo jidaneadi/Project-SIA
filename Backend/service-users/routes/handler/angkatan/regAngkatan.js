@@ -16,13 +16,14 @@ module.exports = async (req, res) =>{
     }
 
     const data = {
-        role : req.body.tahun_masuk
+        tahun_masuk : req.body.tahun_masuk
     }
 
-    const createdRole = await Angkatan.create(data);
+    const craetedData = await Angkatan.create(data);
 
-    return res.status(201).json({
+    return res.status(200).json({
         status : 'Status OK!',
-        message : 'Sukses tambah data role'
+        message : 'Sukses tambah data angkatan',
+        data : craetedData
     })
 }
