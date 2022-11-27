@@ -6,7 +6,7 @@ const v = new Validator();
 module.exports = async (req, res) => {
     const schema = {
         id_role : 'string|empty:false',
-        // id_angkatan: 'string|empty:false',
+        id_angkatan: 'string|empty:false',
         nisn : 'string|empty:false',
         name : 'string|empty:false',
         name_ortu_wali : 'string|empty:false',
@@ -44,7 +44,7 @@ module.exports = async (req, res) => {
     const data = {
         pass : passwd,
         id_role : req.body.id_role,
-        // id_angkatan: req.body.id_angkatan,
+        id_angkatan: req.body.id_angkatan,
         nisn : req.body.nisn,
         name : req.body.name,
         name_ortu_wali : req.body.name_ortu_wali,
