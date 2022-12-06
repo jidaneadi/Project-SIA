@@ -1,12 +1,10 @@
 const { Siswa } = require('../../../models');
 
 module.exports = async(req, res) => {
-    const siswaIds = req.query.siswa_ids || [];
 
-    const sqlOptions = {
+    const siswa = await Siswa.findAll({
         attributes : [
             'id',
-            'pass', 
             'id_role', 
             'id_angkatan', 
             'nisn', 
@@ -17,15 +15,7 @@ module.exports = async(req, res) => {
             'email',
             'noHp',
             'alamat']
-    }
-
-    if (siswaIds.lenght){
-        sqlOptions.where = {
-            id : siswaIds 
-        }
-    }
-
-    const siswa = await Siswa.findAll(sqlOptions);
+    });
 
     return res.status(200).json({
         status : 'OK!',
