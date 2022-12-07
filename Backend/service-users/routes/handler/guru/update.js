@@ -35,12 +35,22 @@ module.exports = async(req, res) => {
         });
     }
 
-    const {id_role, nip, name, ttl, gender, email, noHP, alamat, pass} = req.body;
+    const enkripsiPass = await bcrypt.hash(req.body.pass, 10);
+    const data = {
+        id_role : req.body.id,
+        nip : req.body.nip, 
+        name : req.body.name, 
+        ttl : req.body.ttl, 
+        gender : req.body.gender, 
+        email : req.body.email,
+        noHP : req.body.noHP,
+        alamat : req.body.alamat,
+        pass : enkripsiPass }
 
-    const data = await idGuru.update({id_role, nip, name, ttl, gender, email, noHP, alamat, pass});
+    const updateData = await idGuru.update(data);
 
     return res.status(200).json({
         status :'OK!',
-        message: data
+        message: updateData
     });
 }
