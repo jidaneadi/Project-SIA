@@ -9,6 +9,7 @@ const siswaRouter = require('./routes/siswa');
 const guruRouter  = require('./routes/guru');
 const roleRouter  = require('./routes/role');
 const angkatanRouter  = require('./routes/angkatan');
+const adminRouter = require('./routes/admin');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use('/siswa', siswaRouter);
 app.use('/guru', guruRouter);
 app.use('/role', roleRouter);
 app.use('/angkatan', angkatanRouter);
+app.use('/admin', adminRouter);
 
 
 module.exports = app;
