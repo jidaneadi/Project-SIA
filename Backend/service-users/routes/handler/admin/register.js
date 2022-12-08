@@ -49,9 +49,10 @@ module.exports = async(req, res) => {
         pass : enkripPass
     }
 
+    const createData = await Admin.create(data);
     return res.status(200).json({
         status : 'OK!',
         message: 'Sukses register admin',
-        data : data
+        data : createData
     })
 }
