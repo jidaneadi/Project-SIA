@@ -4,7 +4,7 @@ const api = apiAdapter(URL_SERVICE_SISWA);
 
 module.exports = async(req, res) => {
     try{
-        const siswa = await api.put('/users/siswa/', req.body);
+        const siswa = await api.get('/users/siswa/', req.body);
         return res.json(siswa.data);
     }catch(error){
         if(error.code == 'ECONREFUSHED'){
